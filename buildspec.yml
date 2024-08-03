@@ -54,8 +54,8 @@ phases:
     # run-as: Linux-user-name
     on-failure: ABORT
     commands:
-      - dotnet restore Net7TestApp/Net7TestApp.sln
-      - dotnet build Net7TestApp/Net7TestApp.sln
+      - dotnet restore
+      - dotnet build
 #     finally:
 #       - command
 #       - command
