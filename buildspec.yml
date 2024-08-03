@@ -1,6 +1,6 @@
 version: 0.2
 
-run-as: Linux-user-name
+# run-as: Linux-user-name
 
 # env:
 #   shell: shell-tag
@@ -27,23 +27,23 @@ run-as: Linux-user-name
 #   # build-matrix:
 #   # build-graph:
         
-# phases:
+phases:
 #   install:
 #     run-as: Linux-user-name
 #     on-failure: ABORT | CONTINUE
-#     runtime-versions:
-#       runtime: version
-#       runtime: version
-#     commands:
-#       - command
-#       - command
-#     finally:
-#       - command
-#       - command
+# #     runtime-versions:
+# #       runtime: version
+# #       runtime: version
+# #     commands:
+# #       - command
+# #       - command
+# #     finally:
+# #       - command
+# #       - command
     
   pre_build:
     run-as: root
-    on-failure: ABORT | CONTINUE
+    on-failure: CONTINUE
     commands:
       - echo "I have arrived!!"    
     # finally:
