@@ -64,7 +64,7 @@ phases:
     # run-as: Linux-user-name
     on-failure: ABORT | CONTINUE
     commands:
-      - dotnet publish ./
+      - dotnet publish
 #       - command
 #     finally:
 #       - command
