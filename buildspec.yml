@@ -64,7 +64,8 @@ phases:
     # run-as: Linux-user-name
     on-failure: ABORT | CONTINUE
     commands:
-      - dotnet publish
+      - dotnet publish -c Release -r linux-x64 -o ./build_output ./${PROJECT}/${PROJECT}.csproj --self-contained false
+      - cp Procfile ./build_output
 #       - command
 #     finally:
 #       - command
@@ -78,13 +79,13 @@ phases:
 #     base-directory: location
 #     discard-paths: no | yes
 #     file-format: report-format
-# artifacts:
-#   files:
-#     - location
+artifacts:
+  files:
+    - '**/*'
 #     - location
 #   name: artifact-name
-#   discard-paths: no | yes
-#   base-directory: location
+  discard-paths: no
+  base-directory: ./build_output
 #   exclude-paths: excluded paths
 #   enable-symlinks: no | yes
 #   s3-prefix: prefix
