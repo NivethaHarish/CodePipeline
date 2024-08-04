@@ -60,11 +60,11 @@ phases:
 #       - command
 #       - command
     
-#   post_build:
-#     run-as: Linux-user-name
-#     on-failure: ABORT | CONTINUE
-#     commands:
-#       - command
+  post_build:
+    # run-as: Linux-user-name
+    on-failure: ABORT | CONTINUE
+    commands:
+      - dotnet publish ./
 #       - command
 #     finally:
 #       - command
