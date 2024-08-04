@@ -65,7 +65,7 @@ phases:
     on-failure: ABORT | CONTINUE
     commands:
       - dotnet publish -c Release -r linux-x64 -o ./build_output ./Net7TestApp/PatternMatching.csproj --self-contained false
-      - cp Procfile ./build_output
+      # - cp Procfile ./build_output
 #       - command
 #     finally:
 #       - command
