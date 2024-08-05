@@ -3,34 +3,34 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: patterns-translation-at-scale-v1
 
-# Parameters:
-#   TargetLanguage:
-#     Type: String
-#     Default: 'fr es it'
-#     # Entire list of language codes at:
-#     # https://docs.aws.amazon.com/translate/latest/dg/how-it-works.html#how-it-works-language-codes
-#     Description: (Required) A list of target language codes (separated by spaces)
+Parameters:
+  # TargetLanguage:
+  #   Type: String
+  #   Default: 'fr es it'
+  #   # Entire list of language codes at:
+  #   # https://docs.aws.amazon.com/translate/latest/dg/how-it-works.html#how-it-works-language-codes
+  #   Description: (Required) A list of target language codes (separated by spaces)
 #   TranslationBucketName:
 #     Type: String
 #     Default: 'patterns-translation-v1'
-#   BatchingBucketName:
-#     Type: String
-#     Default: 'patterns-batching-v1'
+  BatchingBucketName:
+    Type: String
+    Default: 'patterns-batching-v1'
 
 # Globals:
 #   Function:
 #     Timeout: 15
 
-# Resources:
-#   ## S3 buckets
-#   BatchingBucket:
-#     Type: AWS::S3::Bucket
-#     Properties:
-#       BucketName: !Ref BatchingBucketName
-#   TranslationBucket:
-#     Type: AWS::S3::Bucket
-#     Properties:
-#       BucketName: !Ref TranslationBucketName
+Resources:
+  ## S3 buckets
+  BatchingBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BatchingBucketName
+  # TranslationBucket:
+  #   Type: AWS::S3::Bucket
+  #   Properties:
+  #     BucketName: !Ref TranslationBucketName
 
 #   ## Lambda functions
 #   TranslatorFunction:
