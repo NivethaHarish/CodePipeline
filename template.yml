@@ -3,7 +3,7 @@ Description: patterns-translation-at-scale-v1
 Parameters:
   BatchingBucketName:
     Type: String
-    Default: 'patterns-batching-v1'
+    Default: 'patterns-batching-v1-nive-bucket'
 Resources:
   BatchingBucket:
     Type: AWS::S3::Bucket
